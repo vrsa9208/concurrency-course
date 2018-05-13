@@ -2,6 +2,7 @@ package com.vrsa9208.console;
 
 public class LongWrapper {
 	
+	private Object key = new Object();
 	private long l;
 	
 	public LongWrapper(long l) {
@@ -13,7 +14,9 @@ public class LongWrapper {
 	}
 	
 	public void incrementValue() {
-		l = l + 1;
+		synchronized (key) {
+			l = l + 1;
+		}
 	}
 
 }

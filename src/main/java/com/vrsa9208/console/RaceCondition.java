@@ -21,8 +21,7 @@ public class RaceCondition {
 			threads[i].join();
 		}
 		
-		//The result should be 1,000,000. But it won't be like that. 
-		//It'll variate for each execution.
+		//It'll print 1000000 because of the synchronization in LongWrapper
 		System.out.println("Value = " + longWrapper.getValue());
 	}
 }
