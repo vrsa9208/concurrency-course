@@ -10,12 +10,19 @@ public class RaceCondition {
 			}
 		};
 		
-		Thread thread = new Thread(runnable);
-		thread.start();
+		Thread[] threads = new Thread[1_000];
 		
-		//Waits for the thread until it finishes its execution to continue
-		thread.join();
+		for (int i = 0; i < threads.length; i++) {
+			threads[i] = new Thread(runnable);
+			threads[i].start();
+		}
 		
+		for (int i = 0; i < threads.length; i++) {
+			threads[i].join();
+		}
+		
+		//The result should be 1,000,000. But it won't be like that. 
+		//It'll variate for each execution.
 		System.out.println("Value = " + longWrapper.getValue());
 	}
 }
