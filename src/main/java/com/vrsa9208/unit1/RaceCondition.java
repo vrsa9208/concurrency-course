@@ -1,4 +1,4 @@
-package com.vrsa9208.console;
+package com.vrsa9208.unit1;
 
 public class RaceCondition {
 	public static void main(String[] args) throws InterruptedException {
